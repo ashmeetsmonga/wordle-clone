@@ -26,7 +26,7 @@ const useWordle = (solution) => {
 		formattedArray.forEach((obj, ind) => {
 			if (obj.color === "green") return;
 			let i = solutionArray.indexOf(obj.key);
-			if (i != -1) {
+			if (i !== -1) {
 				formattedArray[ind].color = "yellow";
 				solutionArray[i] = null;
 			}
