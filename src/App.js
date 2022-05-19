@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Wordle from "./components/Wordle";
 import getRandomWord from "./wordList";
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
 	return (
 		<div className='flex flex-col items-center w-screen'>
 			<h1 className='text-xl'>Wordle Clone</h1>
-			{solution && <p>The solution is : {solution}</p>}
+			{solution && <Wordle solution={solution} />}
 		</div>
 	);
 }
