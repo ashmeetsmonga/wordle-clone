@@ -9,7 +9,6 @@ const useWordle = (solution) => {
 	const [usedKeys, setUsedKeys] = useState({});
 
 	const formatGuess = () => {
-		console.log("format starting of : " + currentGuess);
 		const solutionArray = [...solution];
 		let formattedArray = [...currentGuess].map((c, ind) => {
 			return { key: c, color: "gray" };

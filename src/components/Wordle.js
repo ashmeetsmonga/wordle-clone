@@ -11,7 +11,6 @@ function Wordle({ solution }) {
 	const [showModal, setShowModal] = useState(false);
 
 	useEffect(() => {
-		console.log("Wordle.js useEffect runs");
 		window.addEventListener("keyup", handleKeyup);
 
 		if (isCorrect) {
@@ -29,7 +28,6 @@ function Wordle({ solution }) {
 
 	return (
 		<div className='flex flex-col items-center justify-between h-full'>
-			<div>Solution : {solution}</div>
 			<Grid currentGuess={currentGuess} guesses={guesses} turn={turn} />
 			<Keypad usedKeys={usedKeys} />
 			{showModal && (

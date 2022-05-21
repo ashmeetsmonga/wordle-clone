@@ -2,10 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+.heading {
+    font-family: 'Anton', sans-serif;
 }
 
 @keyframes flip {
