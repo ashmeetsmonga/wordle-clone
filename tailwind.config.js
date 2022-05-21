@@ -7,6 +7,19 @@ module.exports = {
 				bgYellow: "rgb(200, 180, 68)",
 				bgGray: "rgb(119, 124, 126)",
 			},
+
+			keyframes: {
+				flip: {
+					"0%": { transform: "rotateX(0)" },
+					"45%": { transform: "rotateX(90deg)" },
+					"55%": { transform: "rotateX(90deg)" },
+					"100%": { transform: "rotateX(0)" },
+				},
+			},
+
+			animation: {
+				flip: "flip .5s linear forwards",
+			},
 		},
 	},
 	plugins: [],

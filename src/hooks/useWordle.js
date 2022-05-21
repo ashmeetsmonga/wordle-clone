@@ -53,7 +53,7 @@ const useWordle = (solution) => {
 			if (
 				currentGuess.length < 5 ||
 				history.includes(currentGuess) ||
-				turn === 5
+				turn === 6
 			)
 				return;
 			const formattedGuess = formatGuess();

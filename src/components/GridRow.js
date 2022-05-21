@@ -2,7 +2,7 @@ import React from "react";
 
 function GridRow({ guess, currentGuess }) {
 	const classes = {
-		box: "h-[65px] w-[65px] border-gray-300 flex justify-center items-center text-4xl font-bold uppercase",
+		box: "h-[65px] w-[65px] flex justify-center items-center text-4xl font-bold uppercase",
 	};
 
 	if (guess)
@@ -12,9 +12,15 @@ function GridRow({ guess, currentGuess }) {
 					let color = "bg-bgGray";
 					if (obj.color === "green") color = "bg-bgGreen";
 					if (obj.color === "yellow") color = "bg-bgYellow";
-					let box = classes.box + " text-white " + color;
+					let box = classes.box + " " + color;
 					return (
-						<div key={ind} className={box}>
+						<div
+							key={ind}
+							className={box}
+							style={{
+								animation: "flip .5s linear forwards",
+							}}
+						>
 							{obj.key}
 						</div>
 					);
@@ -27,11 +33,25 @@ function GridRow({ guess, currentGuess }) {
 		return (
 			<div className='flex space-x-1'>
 				{letters.map((l, i) => {
-					let box = classes.box + " border";
-					return <div className={box}>{l}</div>;
+					let animation =
+						i === letters.length - 1 ? "bounce .1s linear forwards" : "";
+					return (
+						<div
+							key={i}
+							className={`${classes.box} border-2 border-gray-500`}
+							style={{ animation: animation }}
+						>
+							{l}
+						</div>
+					);
 				})}
 				{[...Array(5 - letters.length)].map((l, i) => {
-					return <div className={`${classes.box} border`}></div>;
+					return (
+						<div
+							key={i}
+							className={`${classes.box} border-2 border-gray-300`}
+						></div>
+					);
 				})}
 			</div>
 		);
@@ -39,11 +59,11 @@ function GridRow({ guess, currentGuess }) {
 
 	return (
 		<div className='flex space-x-1'>
-			<div className={`${classes.box} border`}></div>
-			<div className={`${classes.box} border`}></div>
-			<div className={`${classes.box} border`}></div>
-			<div className={`${classes.box} border`}></div>
-			<div className={`${classes.box} border`}></div>
+			<div className={`${classes.box} border-2 border-gray-300`}></div>
+			<div className={`${classes.box} border-2 border-gray-300`}></div>
+			<div className={`${classes.box} border-2 border-gray-300`}></div>
+			<div className={`${classes.box} border-2 border-gray-300`}></div>
+			<div className={`${classes.box} border-2 border-gray-300`}></div>
 		</div>
 	);
 }

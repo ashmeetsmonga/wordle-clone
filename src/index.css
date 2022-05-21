@@ -5,3 +5,47 @@
 * {
     box-sizing: border-box;
 }
+
+@keyframes flip {
+    0% {
+        transform: rotateX(0);
+        background-color: #fff;
+        border-width: 2px;
+        border-color: #6b7280;
+        color: black;
+    }
+
+    45% {
+        transform: rotateX(90deg);
+        background-color: #fff;
+        border-width: 2px;
+        border-color: #6b7280;
+        color: black;
+    }
+
+    55% {
+        transform: rotateX(90deg);
+        color: white;
+    }
+
+    100% {
+        transform: rotateX(0);
+        color: white;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+        border-color: #6b7280;
+    }
+
+    100% {
+        transform: scale(1);
+        border-color: #6b7280;
+    }
+}
